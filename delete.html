@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globe with Airline Paths</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <div id="globeViz"></div>
+  <script src="https://unpkg.com/three/build/three.min.js"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script>
+    // Create the globe
+    const Globe = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+      .width(window.innerWidth)
+      .height(window.innerHeight)
+      (document.getElementById('globeViz'));
+
+    // Define coordinates for India
+    const INDIA_COORDINATES = [20.5937, 78.9629];
+
+    // Define coordinates for some countries
+    const countriesCoordinates = [
+      [35.8617, 104.1954],  // China
+      [37.0902, -95.7129],  // USA
+      [55.3781, -3.4360],   // UK
+      [-25.2744, 133.7751], // Australia
+      [61.5240, 105.3188],  // Russia
+      [35.6895, 139.6917],  // Japan
+      [-14.2350, -51.9253], // Brazil
+      [51.1657, 10.4515],   // Germany
+    ];
+
+    // Create arcs
+    const arcsData = countriesCoordinates.map(country => ({
+      startLat: INDIA_COORDINATES[0],
+      startLng: INDIA_COORDINATES[1],
+      endLat: country[0],
+      endLng: country[1],
+      color: [['white', 'red', 'blue'][Math.floor(Math.random() * 3)], 'orange']
+    }));
+
+    // Add arcs to the globe
+    Globe
+      .arcsData(arcsData)
+      .arcColor('color')
+      .arcDashLength(0.3)
+      .arcDashGap(0.3)
+      .arcDashInitialGap(() => Math.random())
+      .arcDashAnimateTime(4000);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      Globe.width([window.innerWidth]);
+      Globe.height([window.innerHeight]);
+    });
+  </script>
+</body>
+</html>

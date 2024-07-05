@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trekzo Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+    
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    
+        /* Optional: If you want to add some padding on smaller screens */
+        @media (max-width: 768px) {
+            .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        #chartdiv {
+          width: 100%;
+          height: 500px;
+          max-width:100%;
+          background-color:#000033;
+        }
+    </style>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                TrekzoResources
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <a href="https://drive.google.com/file/d/1YTPztprIlZdfZt1i7cTYP2cO_flaMQml/view?ts=6684ee50" class="btn btn-brand ms-lg-3">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 data-aos="fade-left" class="text-white fw-semibold display-1">
+                        Trekzo Resources <span class="text-muted" style="font-size: 0.4em;">Pvt Ltd</span>
+                    </h1>
+                    
+
+                    <h5 class="text-white mt-3 mb-4" data-aos="fade-right">A commodity trading organization</h5>
+                    <div data-aos="fade-up" data-aos-delay="50">
+                        <a href="index.html#about" class="btn btn-brand me-2" >Get Started</a>
+                        <a href="index.html#portfolio" class="btn btn-light ms-2">Our Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Our Market Leadership</h1>
+                        <div class="line"></div>
+                        <p> We are a leading commodity trading organization dedicated to providing high-quality materials and exceptional service to our clients worldwide. 
+                            With a strong focus on innovation, evolution, and execution, we strive to meet the diverse needs of our customers and exceed their expectations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
+                    <img src="./assets/images/mine_about.jpg" alt="">
+                </div>
+                <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
+                    <h1>About Trekzo</h1>
+                    <p class="mt-3 mb-4">We are committed to providing the highest quality materials globally, ensuring they meet any given requirement.</p>
+                    <div class="d-flex pt-4 mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-briefcase-fill"></i>
+                        </div>
+                        <div>
+                            <h6  style="padding-top: 20px;">We prioritize exceptional customer service</h6>
+                            
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-shake-hands-fill"></i>
+                        </div>
+                        <div>
+                            <h6  style="padding-top: 5px;">We prioritize our clients' needs, providing personalized solutions and unrivaled customer service.</h6>
+                           
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="iconbox me-4">
+                            <i class="ri-rocket-2-fill"></i>
+                        </div>
+                        <div>
+                            <h6  style="padding-top: 20px;">Quality is at the forefront of everything we do.</h6>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-padding border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Services</h1>
+                        <div class="line"></div>
+                        <p>We are dedicated to delivering unparalleled value and top-tier services in the global commodities market.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-stock-fill"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Chemicals</h5>
+                        <p>
+                            <span>Soda Ash</span><br>
+                            <span>Sodium Silicate</span><br>
+                            <span>HEC Natrosol 250 LR</span><br>
+                            <span>Titanium Dioxide</span><br>
+                            <span>Sodium Carboxymethyl Cellulose</span><br>
+                            <span>Acetic Acid</span><br>
+                            <span>Toluene</span><br>
+                            <span>Butyl Acetate</span><br>
+                            <span>Mix Xylene</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="450">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-coupon-fill"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Minerals</h5>
+                        <p>
+                            <span>Limestone</span><br>
+                            <span>Iron Ore</span><br>
+                            <span>Quartz</span><br>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="550">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-send-to-back"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Ferro Alloys</h5>
+                        <p>
+                            <span> Silico Manganese: HC 60/14 <br>
+                                HC 65/16 <br>
+                                MC 53% <br>
+                                LC 55%</span><br>
+                            <span>
+                                Ferro Manganese: HC 70% <br>
+                                HC 75% <br>
+                                MC 70%  <br>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="650">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-send-to-back"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Ferro Alloys</h5>
+                        <p>
+                            <span>
+                                Ferro Silicon: 70-75%
+                            </span> <br>
+                            <span>
+                                Ferro Chrome:HC 60%
+                            </span><br>
+                            <span>
+                            PIG IRON:<br>STEEL GRADE <br>        
+                                      FOUNDRY GRADE
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Our Portfolio</h1>
+                        <div class="line"></div>
+                        <p>We offer a wide range of essential commodities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="portfolio-item image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/mineral.jpg" alt="">
+                        </div>
+                        <a href="./assets/images/mineral.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item image-zoom mt-4">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/titanium.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/titanium.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="portfolio-item image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/idk.jpg" alt="">
+                        </div>
+                        <a href="./assets/images/idk.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item image-zoom mt-4">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/blast.jpg" alt="">
+                        </div>
+                        <a href="./assets/images/blast.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="portfolio-item image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/mining.jpg" alt="">
+                        </div>
+                        <a href="./assets/images/mining.jpg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item image-zoom mt-4">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/iron.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/iron.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="portfolio-item image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/who.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/who.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item image-zoom mt-4">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/limestone.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/limestone.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="portfolio-item image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/ss.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/ss.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item image-zoom mt-4">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/quartz.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/quartz.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="portfolio-item image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/out.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/out.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item image-zoom mt-4">
+                        <div class="image-zoom-wrapper">
+                            <img src="./assets/images/sa.jpeg" alt="">
+                        </div>
+                        <a href="./assets/images/sa.jpeg" data-fancybox="gallery" class="iconbox"><i class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+   <!-- CONTACT -->
+<section class="section-padding bg-light" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                <div class="section-title">
+                    <h1 class="display-4 text-white fw-semibold">Get in touch</h1>
+                    <div class="line bg-white"></div>
+                    <p class="text-white">How to reach us</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
+            <div class="col-lg-8">
+                <form action="https://api.web3forms.com/submit" method="POST" class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
+                    <input type="hidden" name="access_key" value="d7d9bebf-7c91-4031-948c-c34a2b35a022">
+                    <div class="form-group col-lg-6">
+                        <input type="text" name="first_name" class="form-control" placeholder="Enter first name" required>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="text" name="last_name" class="form-control" placeholder="Enter last name" required>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email address" required>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="text" name="subject" class="form-control" placeholder="Enter subject" required>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" required></textarea>
+                    </div>
+                    <div class="form-group col-lg-12 d-grid">
+                        <button type="submit" class="btn btn-brand">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Location</h1>
+                        <div class="line"></div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-fluid"> <!-- Changed from container to container-fluid -->
+                <div class="row">
+                    <div class="col-12" data-aos="fade-up" data-aos-delay="300"> <!-- Changed from col-lg-6 to col-12 -->
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.7245702145105!2d88.44362186099268!3d22.626758230897224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89fcc2c808905%3A0xe8189ac60c67cfa4!2sUrban%20Greens!5e0!3m2!1sen!2sin!4v1718387367825!5m2!1sen!2sin" 
+                                frameborder="0" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                aria-hidden="false" 
+                                tabindex="0">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-3 col-sm-6">
+                        
+                        <div class="line"></div>
+                        <h5>Trekzo</h5>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/trekzo-resources-pvt-ltd/mycompany/"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">CONTACT</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li>Urban Green Complex,
+                                Atghara, Rajarhat, Gopalpur 3300,Kolkata-700136</li>
+                            <li>+91 7595800294</li>
+                            <li>marketing@trekzoresourcespvtltd.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">© Copyright Trekzo. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
