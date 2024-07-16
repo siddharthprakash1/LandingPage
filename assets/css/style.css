@@ -282,7 +282,7 @@ img {
     content: "";
     width: 100%;
     height: 70%;
-    background: linear-gradient(rgba(0, 77, 64, 0.507), rgba(0, 77, 64, 0.438)), url(../images/counter.jpg);
+    background: linear-gradient(rgba(0, 77, 64, 0.507), rgba(0, 77, 64, 0.438)), url(../images/coal_hero3.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
